@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Tiket Konser</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #ee0979);
+            color: #333;
+            margin: 0;
+            padding: 40px 15px;
+        }
+
+        form {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #6a11cb;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, #6a11cb, #ee0979);
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group > label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #9b35db;
+            box-shadow: 0 0 6px rgba(155, 53, 219, 0.25);
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 15px;
+        }
+
+        .name-box {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sub-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        .phone-fields {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phone-area {
+            width: 30% !important;
+        }
+
+        .phone-number {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .radio-option input[type="radio"] {
+            accent-color: #8e2de2;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .other-input {
+            max-width: 200px;
+            padding: 8px !important;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #8e2de2, #ee0979);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(142, 45, 226, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Tampilan HP */
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            form {
+                padding: 22px 18px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .name-fields {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="#" method="POST">
+
+    <h2>🎤 Tiket Konser Terhebat!</h2>
+    <p class="subtitle">
+        Dapatkan tiket hari ini sebelum terlambat!
+    </p>
+
+    <hr>
+
+    <!-- Nama -->
+    <div class="form-group">
+        <label>Nama</label>
+
+        <div class="form-control name-fields">
+            <div class="name-box">
+                <input type="text" name="nama_depan"
+                       placeholder="Nama depan" required>
+                <div class="sub-label">Nama Depan</div>
+            </div>
+
+            <div class="name-box">
+                <input type="text" name="nama_belakang"
+                       placeholder="Nama belakang" required>
+                <div class="sub-label">Nama Belakang</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">E-mail</label>
+
+        <div class="form-control">
+            <input type="email" id="email" name="email"
+                   placeholder="nama@contoh.com" required>
+            <div class="sub-label">Contoh: nama@contoh.com</div>
+        </div>
+    </div>
+
+    <!-- Nomor Telepon -->
+    <div class="form-group">
+        <label>Nomor Telepon</label>
+
+        <div class="form-control phone-fields">
+            <input type="text" class="phone-area"
+                   name="kode_area" placeholder="Kode area">
+
+            <span>-</span>
+
+            <input type="text" class="phone-number"
+                   name="nomor_telepon" placeholder="Nomor telepon">
+        </div>
+    </div>
+
+    <!-- Tempat Duduk -->
+    <div class="form-group">
+        <label>Pilihan Tempat Duduk</label>
+
+        <div class="form-control">
+            <div class="radio-option">
+                <input type="radio" id="depan"
+                       name="tempat_duduk" value="Panggung Depan" required>
+                <label for="depan">Panggung Depan</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="tengah"
+                       name="tempat_duduk" value="Tengah">
+                <label for="tengah">Tengah</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="balkon"
+                       name="tempat_duduk" value="Balkon">
+                <label for="balkon">Balkon</label>
+            </div>
+
+            <div class="radio-option">
+                <input type="radio" id="lainnya"
+                       name="tempat_duduk" value="Lainnya">
+                <input type="text" class="other-input"
+                       name="tempat_lainnya" placeholder="Tempat lainnya">
+            </div>
+        </div>
+    </div>
+
+    <!-- Jumlah Tiket -->
+    <div class="form-group">
+        <label for="jumlah">Jumlah Tiket</label>
+
+        <div class="form-control">
+            <input type="number" id="jumlah" name="jumlah_tiket"
+                   min="1" max="10" placeholder="Masukkan jumlah tiket"
+                   required>
+        </div>
+    </div>
+
+    <!-- Pertanyaan -->
+    <div class="form-group">
+        <label for="pertanyaan">Ada Pertanyaan?</label>
+
+        <div class="form-control">
+            <textarea id="pertanyaan" name="pertanyaan"
+                      placeholder="Ketik pertanyaan di sini..."></textarea>
+        </div>
+    </div>
+
+    <!-- Tombol -->
+    <button type="submit" class="submit-btn">
+        🎟️ Dapatkan Tiket!
+    </button>
+
+</form>
+
+</body>
+</html>!
